@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Survey by Frank Chengula">
+    <meta name="keywords" content="Survey, Feedback, Health Information Sciences">
+    <meta name="author" content="Frank Chengula">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey - Frank Chengula</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Inline CSS for Survey Page */
+        .survey-container {
+            padding: 20px;
+            margin-top: 100px;
+        }
+
+        form {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .checkbox-group, .radio-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Survey</h1>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="portfolio.html">Portfolio/Projects</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="survey.html">Survey</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="survey-container">
+        <form id="surveyForm" action="#" method="post">
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname" required>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required>
+
+            <div class="radio-group">
+                <p>How did you hear about me?</p>
+                <label><input type="radio" name="source" value="Social Media" required> Social Media</label>
+                <label><input type="radio" name="source" value="Friend"> Friend</label>
+                <label><input type="radio" name="source" value="Search Engine"> Search Engine</label>
+                <label><input type="radio" name="source" value="Other"> Other</label>
+            </div>
+
+            <div class="checkbox-group">
+                <p>What topics are you interested in? (Select all that apply)</p>
+                <label><input type="checkbox" name="topics" value="Web Development"> Web Development</label>
+                <label><input type="checkbox" name="topics" value="Health Informatics"> Health Informatics</label>
+                <label><input type="checkbox" name="topics" value="Project Management"> Project Management</label>
+                <label><input type="checkbox" name="topics" value="ICT in Healthcare"> ICT in Healthcare</label>
+            </div>
+
+            <label for="feedback">Additional Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="5"></textarea>
+
+            <input type="submit" value="Submit Survey">
+        </form>
+    </section>
+</main>
+
+<footer>
+    <p>&copy; 2025 Frank Chengula. All rights reserved.</p>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+// Basic Validation
+document.getElementById('surveyForm').addEventListener('submit', function(event) {
+    const email = document.getElementById('email').value;
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!emailPattern.test(email)) {
+        alert('Please enter a valid email address.');
+        event.preventDefault();
+    }
+});
+</script>
+
+</body>
+</html>
